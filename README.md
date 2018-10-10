@@ -48,7 +48,7 @@ Learning of the embedding is handled by the `asne_src/main.py` script which prov
 
 ```
   --edge-path    STR        Input graph path.           Default is `input/edges/chameleon_edges.csv`.
-  --feature-path STR        Input Features path.        Default is `input/features/chameleon_features.json`.
+  --features-path STR        Input Features path.        Default is `input/features/chameleon_features.json`.
   --output-path  STR        Embedding path.             Default is `output/chameleon_asne.csv`.
 ```
 
@@ -87,5 +87,5 @@ python asne_src/main.py --batch_size 512
 Creating an embedding of another structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
 
 ```
-python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --feature-path input/features/giraffe_features.csv --output-path output/giraffe_asne.csv
+python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --features-path input/features/giraffe_features.csv --output-path output/giraffe_asne.csv
 ```
