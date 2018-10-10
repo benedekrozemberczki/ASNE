@@ -48,7 +48,7 @@ Learning of the embedding is handled by the `asne_src/main.py` script which prov
 
 ```
   --edge-path    STR        Input graph path.           Default is `input/edges/chameleon_edges.csv`.
-  --features-path STR        Input Features path.        Default is `input/features/chameleon_features.json`.
+  --features-path STR       Input Features path.        Default is `input/features/chameleon_features.json`.
   --output-path  STR        Embedding path.             Default is `output/chameleon_asne.csv`.
 ```
 
