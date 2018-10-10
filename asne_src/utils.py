@@ -8,32 +8,32 @@ def parse_args():
 
     parser = argparse.ArgumentParser(description="Run ASNE.")
 
-    parser.add_argument('--edge_path',
+    parser.add_argument('--edge-path',
                         nargs='?',
                         default='./input/edges/chameleon_edges.csv',
                         help='Edge list path.')
 
-    parser.add_argument('--features_path',
+    parser.add_argument('--features-path',
                         nargs='?',
                         default='./input/features/chameleon_features.json',
                         help='Features path.')
 
-    parser.add_argument('--output_path',
+    parser.add_argument('--output-path',
                         nargs='?',
                         default='./output/chameleon_asne.csv',
                         help='Output path.')
 
-    parser.add_argument('--node_embedding_dimensions',
+    parser.add_argument('--node-embedding-dimensions',
                         type=int,
                         default=16,
                         help='Node embedding matrix dimensions. Default is 16.')
 
-    parser.add_argument('--feature_embedding_dimensions',
+    parser.add_argument('--feature-embedding-dimensions',
                         type=int,
                         default=16,
                         help='Feature embedding matrix dimensions. Default is 16.')
 
-    parser.add_argument('--batch_size',
+    parser.add_argument('--batch-size',
                         type=int,
                         default=64,
                         help='Batch size. Default is 64.')
@@ -48,7 +48,7 @@ def parse_args():
                         default=10,
                         help='Number of epochs. Default is 10.')
 
-    parser.add_argument('--negative_samples',
+    parser.add_argument('--negative-samples',
                         type=int,
                         default=5,
                         help='Number of negative samples. Default is 5.')
