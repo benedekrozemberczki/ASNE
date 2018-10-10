@@ -1,21 +1,24 @@
 ASNE
 ============================================
 <p align="justify">
-An implementation of "Fusing Structure and Content via Non-negative Matrix Factorization for Embedding Information Networks". FSCNMF is a graph embedding algorithm which learns an embedding of nodes and fuses the node representations with node attributes. The procedure places nodes in an abstract feature space where information about a fixed order procimity is preserved and attributes of neighbours within the proximity are also part of the representation. FSCNMF learns the joint feature-proximal representations using regularized non-negative matrix factorization. In our implementation we assumed that the proximity matrix used in the approximation is sparse, hence the solution runtime can be linear in the number of nodes for low proximity. For a large proximity order value (which is larger than the graph diameter) the runtime is quadratic.  The model can assume that the node-feature matrix is sparse or that it is dense, which changes the runtime considerably.</p>
+An implementation of "Attributed Social Network Embedding". ASNE is a graph embedding algorithm which learns an embedding of nodes and fuses the node representations with node attributes. The procedure places nodes in an abstract feature space where information aboutfrist order proximity is preserved and attributes of a node are also part of the representation. ASNE learns the joint feature-proximal representations using a probabilistic factorization model. In our implementation we assumed that the proximity matrix used in the approximation is sparse, hence the solution runtime can be linear in the number of edges. The model assumes that the node-feature matrix is sparse. Compared to other implementations this specific version:
+
+1. Stores the feature matrix as a sparse dictionary.
+2. Uses sparse matrix multiplication to speed up computations.</p>
 <div style="text-align:center"><img src ="asne.jpeg" ,width=720/></div>
 
-This repository provides an implementation for FSCNMF as described in the paper:
-> FSCNMF: Fusing Structure and Content via Non-negative Matrix Factorization for Embedding Information Networks.
-> Sambaran Bandyopadhyay, Harsh Kara, Aswin Kannan and M N Murty
-> arXiv, 2018.
->https://arxiv.org/pdf/1804.05313.pdf
-
+This repository provides an implementation for ASNE as described in the paper:
+> Attributed Social Network Embedding.
+> Lizi Liao, Xiangnan He, Hanwang Zhang, Tat-Seng Chua
+> arXiv, 2017.
+> https://arxiv.org/abs/1705.04969
 
 ### Requirements
 
 The codebase is implemented in Python 2.7. package versions used for development are just below.
 ```
 networkx          1.11
+tensorflow-gpu    1.3.0
 tqdm              4.19.5
 numpy             1.13.3
 pandas            0.20.3
