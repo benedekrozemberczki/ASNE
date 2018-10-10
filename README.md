@@ -42,7 +42,7 @@ The feature matrix is a **sparse binary** one it is stored as a json. Nodes are 
 
 ### Options
 
-Learning of the embedding is handled by the `src/main.py` script which provides the following command line arguments.
+Learning of the embedding is handled by the `asne_src/main.py` script which provides the following command line arguments.
 
 #### Input and output options
 
@@ -70,22 +70,22 @@ The following commands learn a graph embedding and write the embedding to disk. 
 Creating an ASNE embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
 
 ```
-python src/main.py
+python asne_src/main.py
 ```
 Creating an ASNE embedding of the default dataset with 2x128 dimensions.
 
 ```
-python src/main.py --node_embedding_dimensions 128  --feature_embedding_dimensions 128
+python asne_src/main.py --node_embedding_dimensions 128  --feature_embedding_dimensions 128
 ```
 
 Creating an ASNE embedding of the default dataset with asymmetric mixing.
 
 ```
-python src/main.py --batch_size 512
+python asne_src/main.py --batch_size 512
 ```
 
 Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
 
 ```
-python src/main.py --edge-path input/edges/giraffe_edges.csv --feature-path input/features/giraffe_features.csv --output-path output/giraffe_fscnmf.csv --features dense
+python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --feature-path input/features/giraffe_features.csv --output-path output/giraffe_fscnmf.csv --features dense
 ```
