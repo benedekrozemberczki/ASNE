@@ -60,9 +60,9 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 #### Input and output options
 
 ```
-  --edge-path    STR        Input graph path.           Default is `input/chameleon_edges.csv`.
-  --feature-path STR        Input Features path.        Default is `input/chameleon_features.json`.
-  --output-path  STR        Embedding path.             Default is `output/chameleon_fscnmf.csv`.
+  --edge-path    STR        Input graph path.           Default is `input/edges/chameleon_edges.csv`.
+  --feature-path STR        Input Features path.        Default is `input/features/chameleon_features.json`.
+  --output-path  STR        Embedding path.             Default is `output/chameleon_asne.csv`.
 ```
 
 #### Model options
