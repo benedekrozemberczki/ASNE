@@ -68,43 +68,37 @@ Learning of the embedding is handled by the `src/main.py` script which provides 
 #### Model options
 
 ```
-  --features       STR         Structure of the feature matrix.                   Default is `sparse`. 
-  --dimensions     INT         Number of embeding dimensions.                     Default is 32.
-  --order          INT         Order of adjacency matrix powers.                  Default is 3.
-  --iterations     INT         Number of power interations.                       Default is 500.
-  --alpha_1        FLOAT       Alignment parameter for adjacency matrix.          Default is 1000.0.
-  --alpha_2        FLOAT       Adjacency basis regularization.                    Default is 1.0.
-  --alpha_3        FLOAT       Adjacency features regularization.                 Default is 1.0.
-  --beta_1         FLOAT       Alignment parameter for feature matrix.            Default is 1000.0.
-  --beta_2         FLOAT       Attribute basis regularization .                   Default is 1.0.
-  --beta_3         FLOAT       Attribute feature regularization.                  Default is 1.0.
-  --gamma          FLOAT       Embedding mixing parameter.                        Default is 0.5.  
-  --lower-control  FLOAT       Overflow control parameter.                        Default is 10**-15.  
+  --node_embedding_dimensions      INT        Number of node embeding dimensions.           Default is 16.
+  --feature_embedding_dimensions   INT        Number of feature embeding dimensions.        Default is 16.
+  --batch_size                     INT        Batch size for gradient descent.              Default is 64.
+  --epochs                         INT        Number of training epochs.                    Default is 10.
+  --alpha                          FLOAT      Matrix mixing parameter for embedding.        Default is 1.0.
+  --negative_samples               INT        Number of negative samples.                   Default is 10.
 ```
 
 ### Examples
 
 The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID.
 
-Creating aN FSCNMF embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
+Creating an ASNE embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
 
 ```
 python src/main.py
 ```
-Creating an FSCNMF embedding of the default dataset with 128 dimensions and approximation order 1.
+Creating an ASNE embedding of the default dataset with 2x128 dimensions.
 
 ```
-python src/main.py --dimensions 128 --order 1
+python src/main.py --node_embedding_dimensions 128  --feature_embedding_dimensions 128
 ```
 
 Creating an FSCNMF embedding of the default dataset with asymmetric mixing.
 
 ```
-python src/main.py --gamma 0.1
+python src/main.py --batch_size 512
 ```
 
 Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
 
 ```
-python src/main.py --edge-path input/giraffe_edges.csv --feature-path input/giraffe_features.csv --output-path output/giraffe_fscnmf.csv --features dense
+python src/main.py --edge-path input/edges/giraffe_edges.csv --feature-path input/features/giraffe_features.csv --output-path output/giraffe_fscnmf.csv --features dense
 ```
