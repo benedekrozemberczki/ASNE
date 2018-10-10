@@ -10,17 +10,17 @@ def parse_args():
 
     parser.add_argument('--edge_path',
                         nargs='?',
-                        default='./input/edges/giraffe_edges.csv',
+                        default='./input/edges/chameleon_edges.csv',
                         help='Input data path')
 
     parser.add_argument('--features_path',
                         nargs='?',
-                        default='./input/features/giraffe_features.json',
+                        default='./input/features/chameleon_features.json',
                         help='Input data path')
 
     parser.add_argument('--output_path',
                         nargs='?',
-                        default='./output/giraffe_asne.csv',
+                        default='./output/chameleon_asne.csv',
                         help='Input data path')
 
     parser.add_argument('--node_embedding_dimensions',
