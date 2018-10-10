@@ -10,7 +10,7 @@ An implementation of "Attributed Social Network Embedding". ASNE is a graph embe
 This repository provides an implementation for ASNE as described in the paper:
 > Attributed Social Network Embedding.
 > Lizi Liao, Xiangnan He, Hanwang Zhang, Tat-Seng Chua
-> arXiv, 2017.
+> IEEE Transactions on Knowledge and Data Engineering, 2018.
 > https://arxiv.org/abs/1705.04969
 
 ### Requirements
