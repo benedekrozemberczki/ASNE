@@ -87,5 +87,5 @@ python asne_src/main.py --batch_size 512
 Creating an embedding of another structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
 
 ```
-python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --features-path input/features/giraffe_features.csv --output-path output/giraffe_asne.csv
+python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --features-path input/features/giraffe_features.json --output-path output/giraffe_asne.csv
 ```
