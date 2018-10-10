@@ -2,7 +2,7 @@ ASNE
 ============================================
 <p align="justify">
 An implementation of "Fusing Structure and Content via Non-negative Matrix Factorization for Embedding Information Networks". FSCNMF is a graph embedding algorithm which learns an embedding of nodes and fuses the node representations with node attributes. The procedure places nodes in an abstract feature space where information about a fixed order procimity is preserved and attributes of neighbours within the proximity are also part of the representation. FSCNMF learns the joint feature-proximal representations using regularized non-negative matrix factorization. In our implementation we assumed that the proximity matrix used in the approximation is sparse, hence the solution runtime can be linear in the number of nodes for low proximity. For a large proximity order value (which is larger than the graph diameter) the runtime is quadratic.  The model can assume that the node-feature matrix is sparse or that it is dense, which changes the runtime considerably.</p>
-<div style="text-align:center"><img src ="fscnmf.png" ,width=720/></div>
+<div style="text-align:center"><img src ="asne.jpeg" ,width=720/></div>
 
 This repository provides an implementation for FSCNMF as described in the paper:
 > FSCNMF: Fusing Structure and Content via Non-negative Matrix Factorization for Embedding Information Networks.
