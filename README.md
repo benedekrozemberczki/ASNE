@@ -91,7 +91,7 @@ Creating an ASNE embedding of the default dataset with 2x128 dimensions.
 python src/main.py --node_embedding_dimensions 128  --feature_embedding_dimensions 128
 ```
 
-Creating an FSCNMF embedding of the default dataset with asymmetric mixing.
+Creating an ASNE embedding of the default dataset with asymmetric mixing.
 
 ```
 python src/main.py --batch_size 512
