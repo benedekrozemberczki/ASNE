@@ -1,7 +1,7 @@
 import json
+import argparse
 import pandas as pd
 import networkx as nx
-import argparse
 from texttable import Texttable
 
 def parse_args():
@@ -11,47 +11,47 @@ def parse_args():
     parser.add_argument('--edge_path',
                         nargs='?',
                         default='./input/edges/chameleon_edges.csv',
-                        help='Input data path')
+                        help='Edge list path.')
 
     parser.add_argument('--features_path',
                         nargs='?',
                         default='./input/features/chameleon_features.json',
-                        help='Input data path')
+                        help='Features path.')
 
     parser.add_argument('--output_path',
                         nargs='?',
                         default='./output/chameleon_asne.csv',
-                        help='Input data path')
+                        help='Output path.')
 
     parser.add_argument('--node_embedding_dimensions',
                         type=int,
                         default=16,
-                        help='Number of negative samples.')
+                        help='Node embedding matrix dimensions. Default is 16.')
 
     parser.add_argument('--feature_embedding_dimensions',
                         type=int,
                         default=16,
-                        help='Number of negative samples.')
+                        help='Feature embedding matrix dimensions. Default is 16.')
 
     parser.add_argument('--batch_size',
                         type=int,
                         default=64,
-                        help='Number of epochs.')
+                        help='Batch size. Default is 64.')
 
     parser.add_argument('--alpha',
                         type=float,
                         default=1.0,
-                        help='Number of epochs.')
+                        help='Mixing parameter. Default is 1.0.')
 
     parser.add_argument('--epochs',
                         type=int,
                         default=10,
-                        help='Number of epochs.')
+                        help='Number of epochs. Default is 10.')
 
     parser.add_argument('--negative_samples',
                         type=int,
                         default=5,
-                        help='Number of negative samples.')
+                        help='Number of negative samples. Default is 5.')
 
     return parser.parse_args()
 
