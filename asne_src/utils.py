@@ -56,19 +56,34 @@ def parse_args():
     return parser.parse_args()
 
 
-def map_edges(g):
-    edges = [edge for edge in g.edges()]
+def map_edges(graph):
+    """
+    Mapping the edges of the graph to a symmetric edge list.
+    :param g: Networkx graph.
+    :return edges: Symmetric edge list.
+    """
+    edges = [edge for edge in graph.edges()]
     edges_rev = map(lambda x: [x[1],x[0]], edges)
     edges = map(lambda x: [x[0],x[1]], edges)
     edges = edges + edges_rev
     return edges
 
 def feature_reader(path):
+    """
+    Reading the features and transforming the keys.
+    :param path: Path to the features.
+    :return features: Feature dictionary.
+    """
     features = json.load(open(path))
     features = {int(k): map(lambda x: int(x), v) for k,v in features.iteritems()}
     return features
 
 def graph_reader(path):
+    """
+    Reading the edgelist.
+    :param path: Edge list path.
+    :return : NetworkX graph.
+    """
     return nx.from_edgelist(pd.read_csv(path).values.tolist())
 
 def tab_printer(args):
