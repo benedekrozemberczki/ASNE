@@ -55,8 +55,8 @@ Learning of the embedding is handled by the `asne_src/main.py` script which prov
 #### Model options
 
 ```
-  --node_embedding_dimensions      INT        Number of node embeding dimensions.           Default is 16.
-  --feature_embedding_dimensions   INT        Number of feature embeding dimensions.        Default is 16.
+  --node-embedding-dimensions      INT        Number of node embeding dimensions.           Default is 16.
+  --feature-embedding-dimensions   INT        Number of feature embeding dimensions.        Default is 16.
   --batch_size                     INT        Batch size for gradient descent.              Default is 64.
   --epochs                         INT        Number of training epochs.                    Default is 10.
   --alpha                          FLOAT      Matrix mixing parameter for embedding.        Default is 1.0.
@@ -75,7 +75,7 @@ python asne_src/main.py
 Creating an ASNE embedding of the default dataset with 2x128 dimensions.
 
 ```
-python asne_src/main.py --node_embedding_dimensions 128  --feature_embedding_dimensions 128
+python asne_src/main.py --node-embedding-dimensions 128  --feature-embedding-dimensions 128
 ```
 
 Creating an ASNE embedding of the default dataset with asymmetric mixing.
@@ -84,8 +84,8 @@ Creating an ASNE embedding of the default dataset with asymmetric mixing.
 python asne_src/main.py --batch_size 512
 ```
 
-Creating an embedding of an other dense structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
+Creating an embedding of another structured dataset the `Wikipedia Giraffes`. Saving the output in a custom folder.
 
 ```
-python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --feature-path input/features/giraffe_features.csv --output-path output/giraffe_fscnmf.csv --features dense
+python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --feature-path input/features/giraffe_features.csv --output-path output/giraffe_asne.csv
 ```
