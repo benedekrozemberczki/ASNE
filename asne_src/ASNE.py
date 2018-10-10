@@ -12,12 +12,17 @@ from texttable import Texttable
 
 class ASNE:
     """
+    A method to parse up command line parameters. By default it gives an embedding of the Wiki Chameleons.
+    The default hyperparameters give a good quality representation without grid search.
+    Representations are sorted by node ID.
     """
-
     def __init__(self, args, graph, features):
         """
+        Constructor of ASNE object.
+        :param args: Arguments object.
+        :param graph: Networkx graph.
+        :param features: Dictionary of features.
         """
-
         self.args = args
         self.graph = graph
         self.features = features
@@ -29,6 +34,7 @@ class ASNE:
 
     def _setup_variables(self):
         """
+        Creating TensorFlow variables and  placeholders.
         """
         self.node_embedding = tf.Variable(tf.random_uniform([self.node_count, self.args.node_embedding_dimensions], -1.0, 1.0), dtype = tf.float32)
 
@@ -53,6 +59,7 @@ class ASNE:
 
     def _build_model(self):
         """
+        Creating computation graph of ASNE.
         """
         self.graph = tf.Graph()
 
@@ -79,8 +86,11 @@ class ASNE:
             self.sess = tf.Session()
             self.sess.run(init)
 
-    def _generate_batch(self,i):
+    def _generate_batch(self, i):
         """
+        Creating a batch of node indices and features.
+        :param i: Batch index
+        :return feed_dict: Dictionary with numpy arras for indices and features.
         """
         left_nodes = np.array([edge[0] for edge in self.edges[self.args.batch_size*i:self.args.batch_size*(i+1)]])
         right_nodes = np.array([[edge[1]] for edge in self.edges[self.args.batch_size*i:self.args.batch_size*(i+1)]])
@@ -101,15 +111,19 @@ class ASNE:
                      self.right_nodes: right_nodes}
         return feed_dict
 
-    def _optimize(self,feed_dict):
+    def _optimize(self, feed_dict):
         """
+        Running weight optimization on a batch.
+        :param feed_dict: Dictionary with inputs.
         """
         loss, opt = self.sess.run((self.loss, self.optimizer), feed_dict=feed_dict)
         self.costs = self.costs + [loss]
         
 
-    def _epoch_start(self,epoch):
+    def _epoch_start(self, epoch):
         """
+        Printing the epoch number and setting up the cost list.
+        :param epoch: Epoch number.
         """
         random.shuffle(self.edges)
         self.costs = []
@@ -117,8 +131,10 @@ class ASNE:
         t.add_rows([['Epoch: ', str(epoch+1) +"/" +str(self.args.epochs) + "."]])
         print t.draw()
 
-    def _epoch_end(self,epoch):
+    def _epoch_end(self, epoch):
         """
+        Printing the epoch average loss.
+        :param epoch: Epoch number.
         """
         t = Texttable() 
         t.add_rows([['Average Loss: ', round(np.mean(self.costs), 4)]])
@@ -126,6 +142,7 @@ class ASNE:
 
     def train(self):
         """
+        Training the ASNE model.
         """
         self.total_batch = int(len(self.edges) / self.args.batch_size)
         for epoch in range(self.args.epochs):
@@ -138,6 +155,7 @@ class ASNE:
 
     def save_embedding(self):
         """
+        Saving the embedding at the default path.
         """
         print("\nSaving the embedding.\n")
         embedding = self.sess.run(self.noise_embedding)
@@ -146,6 +164,3 @@ class ASNE:
         columns = ["id"] + map(lambda x: "X_"+str(x), range(embedding.shape[1]-1))
         embedding = pd.DataFrame(embedding , columns = columns)
         embedding.to_csv(self.args.output_path, index = None)
-
-
-
