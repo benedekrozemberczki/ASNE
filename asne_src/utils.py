@@ -63,8 +63,8 @@ def map_edges(graph):
     :return edges: Symmetric edge list.
     """
     edges = [edge for edge in graph.edges()]
-    edges_rev = map(lambda x: [x[1],x[0]], edges)
-    edges = map(lambda x: [x[0],x[1]], edges)
+    edges_rev = [[edge[1],edge[0]] for edge in edges]
+    edges = [[edge[0], edge[1]] for edge in edges]
     edges = edges + edges_rev
     return edges
 
@@ -75,7 +75,7 @@ def feature_reader(path):
     :return features: Feature dictionary.
     """
     features = json.load(open(path))
-    features = {int(k): map(lambda x: int(x), v) for k,v in features.iteritems()}
+    features = {int(k): list(map(lambda x: int(x), v)) for k,v in features.items()}
     return features
 
 def graph_reader(path):
@@ -93,6 +93,6 @@ def tab_printer(args):
     """
     args = vars(args)
     keys = sorted(args.keys())
-    t = Texttable() 
-    t.add_rows([["Parameter", "Value"]] +  [[k.replace("_"," ").capitalize(),args[k]] for k in keys])
-    print t.draw()
+    tab = Texttable() 
+    tab.add_rows([["Parameter", "Value"]] +  [[k.replace("_"," ").capitalize(),args[k]] for k in keys])
+    print(tab.draw())

@@ -129,7 +129,7 @@ class ASNE:
         self.costs = []
         t = Texttable() 
         t.add_rows([['Epoch: ', str(epoch+1) +"/" +str(self.args.epochs) + "."]])
-        print t.draw()
+        print(t.draw())
 
     def _epoch_end(self, epoch):
         """
@@ -138,7 +138,7 @@ class ASNE:
         """
         t = Texttable() 
         t.add_rows([['Average Loss: ', round(np.mean(self.costs), 4)]])
-        print t.draw()
+        print(t.draw())
 
     def train(self):
         """
@@ -161,6 +161,6 @@ class ASNE:
         embedding = self.sess.run(self.noise_embedding)
         ids = np.array(self.nodes).reshape(-1,1)
         embedding = np.concatenate([ids, embedding], axis = 1)
-        columns = ["id"] + map(lambda x: "X_"+str(x), range(embedding.shape[1]-1))
+        columns = ["id"] + list(map(lambda x: "X_"+str(x), range(embedding.shape[1]-1)))
         embedding = pd.DataFrame(embedding , columns = columns)
         embedding.to_csv(self.args.output_path, index = None)
