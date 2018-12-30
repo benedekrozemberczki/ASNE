@@ -8,50 +8,50 @@ def parse_args():
 
     parser = argparse.ArgumentParser(description="Run ASNE.")
 
-    parser.add_argument('--edge-path',
-                        nargs='?',
-                        default='./input/edges/chameleon_edges.csv',
-                        help='Edge list path.')
+    parser.add_argument("--edge-path",
+                        nargs="?",
+                        default="./input/edges/chameleon_edges.csv",
+                        help="Edge list path.")
 
-    parser.add_argument('--features-path',
-                        nargs='?',
-                        default='./input/features/chameleon_features.json',
-                        help='Features path.')
+    parser.add_argument("--features-path",
+                        nargs="?",
+                        default="./input/features/chameleon_features.json",
+                        help="Features path.")
 
-    parser.add_argument('--output-path',
-                        nargs='?',
-                        default='./output/chameleon_asne.csv',
-                        help='Output path.')
+    parser.add_argument("--output-path",
+                        nargs="?",
+                        default="./output/chameleon_asne.csv",
+                        help="Output path.")
 
-    parser.add_argument('--node-embedding-dimensions',
+    parser.add_argument("--node-embedding-dimensions",
                         type=int,
                         default=16,
-                        help='Node embedding matrix dimensions. Default is 16.')
+                        help="Node embedding matrix dimensions. Default is 16.")
 
-    parser.add_argument('--feature-embedding-dimensions',
+    parser.add_argument("--feature-embedding-dimensions",
                         type=int,
                         default=16,
-                        help='Feature embedding matrix dimensions. Default is 16.')
+                        help="Feature embedding matrix dimensions. Default is 16.")
 
-    parser.add_argument('--batch-size',
+    parser.add_argument("--batch-size",
                         type=int,
                         default=64,
-                        help='Batch size. Default is 64.')
+                        help="Batch size. Default is 64.")
 
-    parser.add_argument('--alpha',
+    parser.add_argument("--alpha",
                         type=float,
                         default=1.0,
-                        help='Mixing parameter. Default is 1.0.')
+                        help="Mixing parameter. Default is 1.0.")
 
-    parser.add_argument('--epochs',
+    parser.add_argument("--epochs",
                         type=int,
                         default=10,
-                        help='Number of epochs. Default is 10.')
+                        help="Number of epochs. Default is 10.")
 
-    parser.add_argument('--negative-samples',
+    parser.add_argument("--negative-samples",
                         type=int,
                         default=5,
-                        help='Number of negative samples. Default is 5.')
+                        help="Number of negative samples. Default is 5.")
 
     return parser.parse_args()
 
@@ -75,7 +75,7 @@ def feature_reader(path):
     :return features: Feature dictionary.
     """
     features = json.load(open(path))
-    features = {int(k): list(map(lambda x: int(x), v)) for k,v in features.items()}
+    features = {int(k): [int(x) for x in v] for k,v in features.items()}
     return features
 
 def graph_reader(path):
