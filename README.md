@@ -33,10 +33,11 @@ The code takes an input graph in a csv file. Every row indicates an edge between
 The feature matrix is a **sparse binary** one it is stored as a json. Nodes are keys of the json and features are the values. For each node feature column ids are stored as elements of a list. The feature matrix is structured as:
 
 ```javascript
-{"target": 1,
- "edges": [[0, 1], [0, 4], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]],
- "labels": {"0": 2, "1": 3, "2": 2, "3": 3, "4": 4},
- "inverse_labels": {"2": [0, 2], "3": [1, 3], "4": [4]}}
+{ 0: [0, 1, 38, 1968, 2000, 52727],
+  1: [10000, 20, 3],
+  2: [],
+  ...
+  n: [2018, 10000]}
 ```
 
 ### Options
