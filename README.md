@@ -1,4 +1,4 @@
-ASNE 	<img src="https://img.shields.io/badge/stars-10+-blue.svg"/> <img src="https://img.shields.io/badge/license-CC0-blue.svg"/>
+ASNE 	<img src="https://img.shields.io/badge/stars-10+-blue.svg"/> <img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
 ============================================
 <p align="justify">
 An implementation of "Attributed Social Network Embedding". ASNE is a graph embedding algorithm which learns an embedding of nodes and fuses the node representations with node attributes. The procedure places nodes in an abstract feature space where information aboutfrist order proximity is preserved and attributes of a node are also part of the representation. ASNE learns the joint feature-proximal representations using a probabilistic factorization model. In our implementation we assumed that the proximity matrix used in the approximation is sparse, hence the solution runtime can be linear in the number of edges. The model assumes that the node-feature matrix is sparse. Compared to other implementations this specific version has several advantages. Specifically:
