@@ -48,7 +48,6 @@ class ASNE:
 
         self.noise_bias = tf.Variable(tf.zeros([self.node_count]), dtype = tf.float32)
 
-
         self.noise_bias = tf.Variable(tf.zeros([self.node_count]), dtype = tf.float32)
 
         self.left_nodes = tf.placeholder(tf.int32, shape=[None])
@@ -119,7 +118,6 @@ class ASNE:
         loss, opt = self.sess.run((self.loss, self.optimizer), feed_dict=feed_dict)
         self.costs = self.costs + [loss]
         
-
     def _epoch_start(self, epoch):
         """
         Printing the epoch number and setting up the cost list.
@@ -151,7 +149,6 @@ class ASNE:
                 feed_dict = self._generate_batch(i)
                 self._optimize(feed_dict)
             self._epoch_end(epoch)
-
 
     def save_embedding(self):
         """
