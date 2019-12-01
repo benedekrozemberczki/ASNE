@@ -29,10 +29,10 @@ scipy             1.1.0
 argparse          1.1.0
 ```
 ### Datasets
-
-The code takes an input graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. Sample graphs for the `Wikipedia Chameleons` and `Wikipedia Giraffes` are included in the  `input/` directory. 
-
-The feature matrix is a **sparse binary** one it is stored as a json. Nodes are keys of the json and features are the values. For each node feature column ids are stored as elements of a list. The feature matrix is structured as:
+<p align="justify">
+The code takes an input graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. Sample graphs for the `Wikipedia Chameleons` and `Wikipedia Giraffes` are included in the  `input/` directory. </p>
+<p align="justify">
+The feature matrix is a **sparse binary** one it is stored as a json. Nodes are keys of the json and features are the values. For each node feature column ids are stored as elements of a list. The feature matrix is structured as:</p>
 
 ```javascript
 { 0: [0, 1, 38, 1968, 2000, 52727],
@@ -43,8 +43,8 @@ The feature matrix is a **sparse binary** one it is stored as a json. Nodes are 
 ```
 
 ### Options
-
-Learning of the embedding is handled by the `asne_src/main.py` script which provides the following command line arguments.
+<p align="justify">
+Learning of the embedding is handled by the `asne_src/main.py` script which provides the following command line arguments.</p>
 
 #### Input and output options
 
@@ -66,10 +66,10 @@ Learning of the embedding is handled by the `asne_src/main.py` script which prov
 ```
 
 ### Examples
-
-The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID.
-
-Creating an ASNE embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
+<p align="justify">
+The following commands learn a graph embedding and write the embedding to disk. The node representations are ordered by the ID.</p>
+<p align="justify">
+Creating an ASNE embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.</p>
 
 ```
 python asne_src/main.py
