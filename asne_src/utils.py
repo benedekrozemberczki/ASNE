@@ -1,3 +1,5 @@
+"""Data manipulation utilities."""
+
 import json
 import argparse
 import pandas as pd
@@ -5,7 +7,7 @@ import networkx as nx
 from texttable import Texttable
 
 def parse_args():
-
+    """Parsing function."""
     parser = argparse.ArgumentParser(description="Run ASNE.")
 
     parser.add_argument("--edge-path",
@@ -63,7 +65,7 @@ def map_edges(graph):
     :return edges: Symmetric edge list.
     """
     edges = [edge for edge in graph.edges()]
-    edges_rev = [[edge[1],edge[0]] for edge in edges]
+    edges_rev = [[edge[1], edge[0]] for edge in edges]
     edges = [[edge[0], edge[1]] for edge in edges]
     edges = edges + edges_rev
     return edges
@@ -75,7 +77,7 @@ def feature_reader(path):
     :return features: Feature dictionary.
     """
     features = json.load(open(path))
-    features = {int(k): [int(x) for x in v] for k,v in features.items()}
+    features = {int(k): [int(x) for x in v] for k, v in features.items()}
     return features
 
 def graph_reader(path):
@@ -93,6 +95,7 @@ def tab_printer(args):
     """
     args = vars(args)
     keys = sorted(args.keys())
-    tab = Texttable() 
-    tab.add_rows([["Parameter", "Value"]] +  [[k.replace("_"," ").capitalize(),args[k]] for k in keys])
+    tab = Texttable()
+    tab.add_rows([["Parameter", "Value"]])
+    tab.add([[k.replace("_", " ").capitalize(), args[k]] for k in keys])
     print(tab.draw())

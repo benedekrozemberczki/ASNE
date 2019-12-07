@@ -1,10 +1,12 @@
+"""Model runner."""
+
 import os
 from asne import ASNE
 from utils import graph_reader, feature_reader, parse_args, tab_printer
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
-def run_ASNE(args, graph, features):
+def run_asne(args, graph, features):
     """
     Fitting an ASNE model and saving the embedding.
     :param args: Arguments object.
@@ -20,4 +22,4 @@ if __name__ == "__main__":
     args = parse_args()
     graph = graph_reader(args.edge_path)
     features = feature_reader(args.features_path)
-    run_ASNE(args, graph, features)
+    run_asne(args, graph, features)
