@@ -97,5 +97,5 @@ def tab_printer(args):
     keys = sorted(args.keys())
     tab = Texttable()
     tab.add_rows([["Parameter", "Value"]])
-    tab.add([[k.replace("_", " ").capitalize(), args[k]] for k in keys])
+    tab.add_rows([[k.replace("_", " ").capitalize(), args[k]] for k in keys])
     print(tab.draw())
