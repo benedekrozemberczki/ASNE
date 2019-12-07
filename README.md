@@ -19,7 +19,7 @@ A dense TensorFlow implementation is available [[here]](https://github.com/lizi-
 
 The codebase is implemented in Python 3.5.2 | Anaconda 4.2.0 (64-bit). Package versions used for development are just below.
 ```
-networkx          1.11
+networkx          2.4
 tensorflow-gpu    1.12.0
 tqdm              4.19.5
 numpy             1.15.4
