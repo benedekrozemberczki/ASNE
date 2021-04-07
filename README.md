@@ -10,12 +10,13 @@ An implementation of "Attributed Social Network Embedding". ASNE is a graph embe
 <div style="text-align:center"><img src ="asne.jpeg" ,width=720/></div>
 
 This repository provides an implementation for ASNE as described in the paper:
+
 > Attributed Social Network Embedding.
 > Lizi Liao, Xiangnan He, Hanwang Zhang, Tat-Seng Chua
 > IEEE Transactions on Knowledge and Data Engineering, 2018.
 > https://arxiv.org/abs/1705.04969
 
-A dense TensorFlow implementation is available [[here]](https://github.com/lizi-git/ASNE).
+A dense **TensorFlow** implementation is available [[here]](https://github.com/lizi-git/ASNE).
 
 ### Requirements
 
