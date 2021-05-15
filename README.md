@@ -100,3 +100,5 @@ python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --features-pat
 **License**
 
 - [GNU License](https://github.com/benedekrozemberczki/ASNE/blob/master/LICENSE)
+
+--------------------------------------------------------------------------------
