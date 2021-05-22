@@ -56,9 +56,6 @@ class ASNE:
         self.noise_bias = tf.Variable(tf.zeros([self.node_count]),
                                       dtype=tf.float32)
 
-        self.noise_bias = tf.Variable(tf.zeros([self.node_count]),
-                                      dtype=tf.float32)
-
         self.left_nodes = tf.placeholder(tf.int32, shape=[None])
 
         self.node_features = tf.sparse_placeholder(tf.float32,
