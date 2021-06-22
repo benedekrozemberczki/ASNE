@@ -17,7 +17,7 @@ This repository provides an implementation for ASNE as described in the paper:
 > https://arxiv.org/abs/1705.04969
 
 A dense **TensorFlow** implementation is available [[here]](https://github.com/lizi-git/ASNE).
-
+-----------------------------------------
 ### Requirements
 
 The codebase is implemented in Python 3.5.2 | Anaconda 4.2.0 (64-bit). Package versions used for development are just below.
