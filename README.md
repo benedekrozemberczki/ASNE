@@ -97,10 +97,10 @@ Creating an embedding of another structured dataset the `Wikipedia Giraffes`. Sa
 python asne_src/main.py --edge-path input/edges/giraffe_edges.csv --features-path input/features/giraffe_features.json --output-path output/giraffe_asne.csv
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 **License**
 
 - [GNU License](https://github.com/benedekrozemberczki/ASNE/blob/master/LICENSE)
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------
