@@ -18,7 +18,7 @@ This repository provides an implementation for ASNE as described in the paper:
 
 A dense **TensorFlow** implementation is available [[here]](https://github.com/lizi-git/ASNE).
 
-----------------------------
+-------------------------
 
 ### Requirements
 
